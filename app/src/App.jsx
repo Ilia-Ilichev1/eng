@@ -85,6 +85,8 @@ export default function App() {
         open
         sx={{
           display: { xs: 'none', md: 'block' },
+          width: 240,
+          flexShrink: 0,
           '& .MuiDrawer-paper': { width: 240, boxSizing: 'border-box' },
         }}
       >
@@ -92,7 +94,15 @@ export default function App() {
         {nav}
       </Drawer>
 
-      <Box component="main" sx={{ flexGrow: 1, p: 3, mt: 8 }}>
+      <Box
+        component="main"
+        sx={{
+          flexGrow: 1,
+          p: 3,
+          mt: 8,
+          minWidth: 0,
+        }}
+      >
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/lessons" element={<Lessons />} />
